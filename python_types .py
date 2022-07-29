@@ -11,11 +11,32 @@ Quand utiliser les autres types :
 - Utilisez un set si vous avez besoin d'unicité pour les éléments.
 - Utilisez des tuples lorsque vos données ne peuvent/ne doivent pas changer.
 Souvent, un tuple est utilisé en combinaison avec un dictionnaire, par exemple, un tuple peut représenter une clé, car il est immuable.
+
+les listes et les dictionnaires sont mutables, ce qui n'est pas le cas des tuples et les sets
 """
 
+""" gestion des chaines de caracteres """
 
+print("-"*80+"\r")
+print("\t \t \t \t \t hello ! \r") #avec retour a la ligne, sans saut de ligne
+print("-"*80+"\n") #avec retour a la ligne avec saut de ligne
+print("end")
 
-"""les listes et les dictionnaires sont mutables, ce qui n'est pas le cas des tuples et les sets"""
+#output:
+--------------------------------------------------------------------------------
+                                    hello ! 
+--------------------------------------------------------------------------------
+
+end
+______________________________________________________________________________________________________
+
+#une string peut etre indexée comme une liste
+str = "Hello world!"
+print(str[6])
+
+#output:
+w
+______________________________________________________________________________________________________
 
 """gestion des listes"""
 
@@ -33,6 +54,113 @@ for x in n[1:3]:
 #output:   
 4
 6
+______________________________________________________________________________________________________
+
+things = [”text", 0, [1, 2, 8], 4.56]
+print(things[2][2])
+
+#output:
+8
+______________________________________________________________________________________________________
+
+""" réassignation de liste"""
+
+nums = [5, 8, 2]
+nums[1] = 42
+
+print(nums)
+
+#output:
+[5, 42, 2]
+______________________________________________________________________________________________________
+
+""" ajout d'elements dans une liste """
+
+nums = [1, 2, 3]
+print(nums + [4, 5, 6])
+
+#output:
+[1, 2, 3, 4, 5, 6]
+______________________________________________________________________________________________________
+
+""" affichage des élements d'une liste """
+
+words = ["hello", "world", "spam", "eggs"]
+for word in words:
+    print(word + "!")
+
+#output:
+hello!
+world!
+spam!
+eggs!
+______________________________________________________________________________________________________
+
+"""generation d'une liste avec des nombre de 0 à 9"""
+
+numbers = range(10)
+for x in numbers:
+    print(x)
+
+#output:
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+numbers = list(range(10))
+print(numbers)
+
+#output:
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+______________________________________________________________________________________________________
+
+"""generation d'une liste avec des nombre de 3 à 7"""
+
+numbers = list(range(3,8))
+print(numbers)
+
+#output:
+[3, 4, 5, 6, 7]
+______________________________________________________________________________________________________
+
+"""generation d'une liste avec des nombre de 5 à 19 avec un pas de 2"""
+
+numbers = list(range(5,20,2))
+print(numbers)
+
+#output:
+[5, 7, 9, 11, 13, 15, 17, 19]
+______________________________________________________________________________________________________
+
+""" slices sur une liste """
+
+squares = [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+print(squares[2:6])   #affichage du 3eme element au 6eme element de la liste
+print(squares[3:8])   #affichage du 4eme au 8eme element de la liste
+print(squares[0:1])   #affiche le 1er element
+print(squares[:5])    #affiche les 5ers elements
+print(squares[5:])    #affiche les elements de la liste a partir du 6eme element
+print(squares[::2])   #affiche tous les nombres paires
+print(squares[2:8:3]) #affiche 1 element sur 3 de la liste entre le 3eme element et le 8eme
+print(squares[1:-1])  #affiche a partir du 2eme element de la liste en supprimant le dernier element
+print(squares[::-1])  #affiche la liste du dernier element au premier
+
+#output:
+[4, 9, 16, 25]
+[9, 16, 25, 36, 49]
+[0]
+[0, 1, 4, 9, 16]
+[25, 36, 49, 64, 81]
+[0, 4, 16, 36, 64]
+[4, 25]
+[1, 4, 9, 16, 25, 36, 49, 64]
 ______________________________________________________________________________________________________
 
 """gestion des dictionaires"""
